@@ -35,7 +35,6 @@ export default function EsqueceuSenha() {
 			try {
 				setCatchSuccess(false);
 				const response = await api.post("forgot", dados);
-				console.log(response.data)
 
 				setCatchSuccess(true);
 				setEmailEnviado(true);
@@ -71,7 +70,6 @@ export default function EsqueceuSenha() {
 				setCatchSuccess(false);
 				setCatchError(false);
 				const response = await api.post("resetPassword", dados);
-				console.log(response.data)
 
 				setCatchSuccess(true);
 				setTimeout(() => {
