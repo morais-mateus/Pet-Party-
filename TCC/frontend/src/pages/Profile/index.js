@@ -543,7 +543,6 @@ export default function Profile(props) {
                         <Input.radio id="usuario" name="tipo" value={dono} onClick={e => validaTipo(false)} htmlFor="usuario" text="Usuário" />
                       </div>
                       <span>Cuidadores terão seu contato e sua descrição disponíveis no site para o acesso de todos!</span>
-                      <input id="btnAtualizar" name="btnAtualizar" type="submit" value="Atualizar" onClick={e => updateInfoProfile()}></input>
                     </div>
                   </>
                   :
@@ -561,6 +560,16 @@ export default function Profile(props) {
                   </>
                 }
               </div>
+              {flagPerfilPessoal ?
+                <>
+                  <div className="col-xs-12 foto-profile">
+                    <Button.principal type="submit" id="btnAtualizarSenha" name="btnAtualizar" text="Atualizar" onClick={e => updateInfoProfile()}/>
+                  </div>
+                </>
+                :
+                <>
+                </>
+              }
             </div>
           </div>
 
@@ -581,7 +590,7 @@ export default function Profile(props) {
                     <Input.text value={confirmPassword} validado={validacaoConfirmPassword} onBlur={e => validaConfirmSenha(newPassword)} onChange={e => setConfirmPassword(e.target.value)} type="password" placeHolder="Confirme sua Nova Senha" id="confirmSenha" name="confirmSenha" />
                     <DivAviso.validacao value={!validacaoConfirmPassword && confirmPassword !== ''} text="Você deve digitar a mesma senha digitada no campo acima." />
                   </div>
-                  <input id="btnAtualizar" name="btnAtualizar" type="submit" value="Atualizar" onClick={e => updateSenha()}></input>
+                  <Button.principal type="submit" id="btnAtualizarSenha" name="cadastrar" text="Atualizar" onClick={e => updateSenha()}/>
                 </div>
               </div>
             </>
