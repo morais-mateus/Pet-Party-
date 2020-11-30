@@ -2,6 +2,7 @@
 .desc-checkbox-tipo {
     text-align: center;
     display: block;
+    font-weight: 700;
 }
 
 body {
@@ -14,4 +15,12 @@ body {
     flex-direction: column;
     margin: 0 auto !important;
     margin-bottom: 15px !important;
+}
+
+#descTipo {
+    padding: 10px 55px;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-weight: 700;
 }

@@ -6,6 +6,8 @@
 .cabecalho-formulario {
     text-align: center;
     padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .hr-formulario {

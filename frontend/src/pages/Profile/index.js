@@ -442,20 +442,20 @@ export default function Profile(props) {
                       <DivAviso.validacao value={!validacaoCep && cep !== ''} text="Você deve digitar seu CEP acima." />
                       <div className="col-xs-6 resetPadding">
                         <label htmlFor="estado">Estado</label><br/>
-                        <Input.text value={estado} validado={validacaoEstado} onBlur={e => validaEstado(estado)} onChange={e => setEstado(e.target.value)} type="text" placeHolder="Estado" id="estado" name="estado" />
+                        <Input.text value={estado} validado={validacaoEstado} onBlur={e => validaEstado(estado)} onChange={e => setEstado(e.target.value)} type="text" placeHolder="Estado" id="estado" name="estado" disabled />
                         <DivAviso.validacao value={!validacaoEstado && estado !== ''} text="Você deve digitar seu Estado acima." />
                       </div>
                       <div className="col-xs-6 resetPadding">
                         <label htmlFor="cidade">Cidade</label><br/>
-                        <Input.text value={cidade} validado={validacaoCidade} onBlur={e => validaCidade(cidade)} onChange={e => setCidade(e.target.value)} type="text" placeHolder="Cidade" id="cidade" name="cidade" />
+                        <Input.text value={cidade} validado={validacaoCidade} onBlur={e => validaCidade(cidade)} onChange={e => setCidade(e.target.value)} type="text" placeHolder="Cidade" id="cidade" name="cidade" disabled />
                         <DivAviso.validacao value={!validacaoCidade && cidade !== ''} text="Você deve digitar sua Cidade acima." />
                       </div>
                       <label htmlFor="bairro">Bairro</label><br/>
-                      <Input.text value={bairro} validado={validacaoBairro} onBlur={e => validaBairro(bairro)} onChange={e => setBairro(e.target.value)} type="text" placeHolder="Bairro" id="bairro" name="bairro" />
+                      <Input.text value={bairro} validado={validacaoBairro} onBlur={e => validaBairro(bairro)} onChange={e => setBairro(e.target.value)} type="text" placeHolder="Bairro" id="bairro" name="bairro" disabled />
                       <DivAviso.validacao value={!validacaoBairro && bairro !== ''} text="Você deve digitar seu Bairro acima." />
                       <div className="col-xs-6 resetPadding">
                         <label htmlFor="rua">Rua</label><br/>
-                        <Input.text value={rua} validado={validacaoRua} onBlur={e => validaRua(rua)} onChange={e => setRua(e.target.value)} type="text" placeHolder="Rua" id="rua" name="rua" />
+                        <Input.text value={rua} validado={validacaoRua} onBlur={e => validaRua(rua)} onChange={e => setRua(e.target.value)} type="text" placeHolder="Rua" id="rua" name="rua" disabled />
                         <DivAviso.validacao value={!validacaoRua && rua !== ''} text="Você deve digitar sua Rua acima." />
                       </div>
                       <div className="col-xs-6 resetPadding">
@@ -543,7 +543,6 @@ export default function Profile(props) {
                         <Input.radio id="usuario" name="tipo" value={dono} onClick={e => validaTipo(false)} htmlFor="usuario" text="Usuário" />
                       </div>
                       <span>Cuidadores terão seu contato e sua descrição disponíveis no site para o acesso de todos!</span>
-                      <input id="btnAtualizar" name="btnAtualizar" type="submit" value="Atualizar" onClick={e => updateInfoProfile()}></input>
                     </div>
                   </>
                   :
@@ -561,6 +560,16 @@ export default function Profile(props) {
                   </>
                 }
               </div>
+              {flagPerfilPessoal ?
+                <>
+                  <div className="col-xs-12 foto-profile">
+                    <Button.principal type="submit" id="btnAtualizarSenha" name="btnAtualizar" text="Atualizar" onClick={e => updateInfoProfile()}/>
+                  </div>
+                </>
+                :
+                <>
+                </>
+              }
             </div>
           </div>
 
@@ -581,7 +590,7 @@ export default function Profile(props) {
                     <Input.text value={confirmPassword} validado={validacaoConfirmPassword} onBlur={e => validaConfirmSenha(newPassword)} onChange={e => setConfirmPassword(e.target.value)} type="password" placeHolder="Confirme sua Nova Senha" id="confirmSenha" name="confirmSenha" />
                     <DivAviso.validacao value={!validacaoConfirmPassword && confirmPassword !== ''} text="Você deve digitar a mesma senha digitada no campo acima." />
                   </div>
-                  <input id="btnAtualizar" name="btnAtualizar" type="submit" value="Atualizar" onClick={e => updateSenha()}></input>
+                  <Button.principal type="submit" id="btnAtualizarSenha" name="cadastrar" text="Atualizar" onClick={e => updateSenha()}/>
                 </div>
               </div>
             </>
@@ -606,3 +615,4 @@ export default function Profile(props) {
   </div>
   );
 }
+//

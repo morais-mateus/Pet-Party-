@@ -14,7 +14,7 @@
     "@types/react-router-dom": "^5.1.5",
     "admin-lte": "2.3.6",
     "axios": "^0.19.2",
-    "font-awesome": "5.15.1",
+    "font-awesome": "4.7.0",
     "google-maps-react": "^2.0.6",
     "ionicons": "3.0.0",
     "jquery": "^3.5.1",

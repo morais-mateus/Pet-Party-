@@ -9,7 +9,7 @@
 }
   
 .btn-principal {
-    background: var(--cor-btn-primaria);
+    background: var(--color-primary-light);
     border: var(--cor-borda-primaria);
     color: var(--cor-txt-primaria);
 }

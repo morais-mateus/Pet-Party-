@@ -69,7 +69,7 @@ a {
   vertical-align: middle;
 }
 .btn-principal a {
-  color: var(--cor-texto-secundaria);
+  color: black;
 }
 .btn-secundario a {
   color: var(--cor-texto-primaria);

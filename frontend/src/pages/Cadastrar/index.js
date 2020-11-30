@@ -307,7 +307,7 @@ export default function Register() {
             link1="/about" link2="/contact" link3="/login"/>
       <CardCentral>
         <form className="form-auth" onSubmit={handleRegister} id="form">
-          <FormHeader nomeArea="cadastro">
+          <FormHeader nomeArea="Cadastro">
               <DivAviso.sucesso value={catchSuccess} text="Cadastrado com sucesso!"/>
               <DivAviso.erro value={catchError} text={ usuario_validado ? "Ocorreu um problema no servidor. Por favor, tente novamente mais tarde!" : "Preencha os campos corretamente antes de submeter o formuário!"}/>
           </FormHeader>
@@ -333,16 +333,16 @@ export default function Register() {
           <Input.text value={longitude} validado={validacaoLongitude} onBlur={e => validaLongitude(longitude)} onChange={e => setLongitude(e.target.value)} type="hidden" placeHolder="Longitude" id="longitude" name="longitude" />
           <DivAviso.validacao value={!validacaoLongitude && longitude !== ''} text="Você deve digitar sua LONGITUDE no campo acima." />
 
-          <Input.text value={estado} validado={validacaoEstado} onBlur={e => validaEstado(estado)} onChange={e => setEstado(e.target.value)} type="text" placeHolder="Estado" id="estado" name="estado" />
+          <Input.text value={estado} validado={validacaoEstado} onBlur={e => validaEstado(estado)} onChange={e => setEstado(e.target.value)} type="text" placeHolder="Estado" id="estado" name="estado" disabled />
           <DivAviso.validacao value={!validacaoEstado && estado !== ''} text="Você deve digitar seu ESTADO acima no formato de sigla." />
 
-          <Input.text value={cidade} validado={validacaoCidade} onBlur={e => validaCidade(cidade)} onChange={e => setCidade(e.target.value)} type="text" placeHolder="Cidade" id="cidade" name="cidade" />
+          <Input.text value={cidade} validado={validacaoCidade} onBlur={e => validaCidade(cidade)} onChange={e => setCidade(e.target.value)} type="text" placeHolder="Cidade" id="cidade" name="cidade" disabled />
           <DivAviso.validacao value={!validacaoCidade && cidade !== ''} text="Você deve digitar o nome da sua CIDADE acima." />
 
-          <Input.text value={bairro} validado={validacaoBairro} onBlur={e => validaBairro(bairro)} onChange={e => setBairro(e.target.value)} type="text" placeHolder="Bairro" id="bairro" name="bairro" />
+          <Input.text value={bairro} validado={validacaoBairro} onBlur={e => validaBairro(bairro)} onChange={e => setBairro(e.target.value)} type="text" placeHolder="Bairro" id="bairro" name="bairro" disabled />
           <DivAviso.validacao value={!validacaoBairro && bairro !== ''} text="Você deve digitar o nome de seu BAIRRO acima." />
 
-          <Input.text value={rua} validado={validacaoRua} onBlur={e => validaRua(rua)} onChange={e => setRua(e.target.value)} type="text" placeHolder="Rua" id="rua" name="rua" />
+          <Input.text value={rua} validado={validacaoRua} onBlur={e => validaRua(rua)} onChange={e => setRua(e.target.value)} type="text" placeHolder="Rua" id="rua" name="rua" disabled />
           <DivAviso.validacao value={!validacaoRua && rua !== ''} text="Você deve digitar o nome da sua RUA acima." />
 
           <Input.text value={numero} validado={validacaoNumero} onBlur={e => validaNumero(numero)} onChange={e => setNumero(e.target.value)} type="number" placeHolder="Numero" id="numero" name="numero" />
@@ -353,6 +353,7 @@ export default function Register() {
             <Input.radio id="cuidador" name="tipo" value={user_cuidador} onClick={e => validaTipo(true)} htmlFor="cuidador" text="Cuidador" />
             <Input.radio id="usuario" name="tipo" value={user_normal} onClick={e => validaTipo(false)} htmlFor="usuario" text="Usuário" />
           </div>
+          <span id="descTipo">Cuidadores terão seu contato e sua descrição disponíveis no site para o acesso de todos!</span>
 
           <textarea name="textarea" value={descricao} validado={validacaoDescricao} onBlur={e => validaDescricao(descricao)} onChange={e => setDescricao(e.target.value)} placeholder="Descrição" className="txtAreaDescricao"
             rows="4"
