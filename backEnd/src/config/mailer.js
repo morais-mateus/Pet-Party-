@@ -8,6 +8,9 @@ let transporter = nodemailer.createTransport({
     user: "petpartyhelp@gmail.com",
     pass: "Pet.2020",
   },
+  tls: {
+      rejectUnauthorized: false
+  }
 });
 
 transporter.use(
