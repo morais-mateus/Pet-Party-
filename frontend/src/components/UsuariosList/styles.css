@@ -23,6 +23,7 @@ td {
 
 tbody tr:hover {
     background: #dcdcdc;
+    cursor: pointer;
 }
 
 img {
