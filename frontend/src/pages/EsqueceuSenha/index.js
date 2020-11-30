@@ -75,7 +75,6 @@ export default function EsqueceuSenha() {
 				setTimeout(() => {
 					setCatchSuccess(false);
 				}, 4000);
-				alert('trocou senha')
 				history.push("/");
 			}
 			catch(error) {
